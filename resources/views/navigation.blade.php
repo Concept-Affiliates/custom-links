@@ -1,6 +1,6 @@
 @foreach (config('custom-links.links') as $name => $link)
 
-    @if(empty($link['_can']) || auth()->user()->can($link['_can']))
+    @if(empty($link['_has_any_role']) || auth()->user()->hasAnyRole($link['_has_any_role']))
 
         @if (empty($link['_url']))
 
@@ -46,7 +46,7 @@
 
                     @foreach ($link['_links'] as $name => $sublink)
 
-                        @if(empty($sublink['_can']) || auth()->user()->can($sublink['_can']))
+                        @if(empty($sublink['_has_any_role']) || auth()->user()->hasAnyRole($sublink['_has_any_role']))
 
                             <li class="leading-tight mb-4 ml-8 text-sm">
                                 <a href="{{ $sublink['_url'] }}" class="text-white text-justify no-underline dim"

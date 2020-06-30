@@ -49,7 +49,7 @@
                         @if(empty($sublink['_has_any_role']) || auth()->user()->hasAnyRole($sublink['_has_any_role']))
 
                             <li class="leading-tight mb-4 ml-8 text-sm">
-                                @if isset($sublink['_target']) && $sublink['_target'] == '_blank'
+                                @if (isset($sublink['_target']) && $sublink['_target'] == '_blank')
 									<a href="{{ $sublink['_url'] }}" class="text-white text-justify no-underline dim"
 									   target="_blank">
 										{{ $name }}

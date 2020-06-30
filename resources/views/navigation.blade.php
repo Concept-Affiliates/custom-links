@@ -60,16 +60,6 @@
 									}" class="text-white text-justify no-underline dim">
 										{{ $name }}
 									</router-link>
-									<!--
-									<router-link :to="{
-										name: 'index',
-										params: {
-											resourceName: '{{ $sublink['_url'] }}'
-										}
-									}" class="text-white text-justify no-underline dim">
-										{{ $name }}
-									</router-link>
-									//-->
 								@endif
                             </li>
 

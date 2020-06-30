@@ -55,7 +55,9 @@
 										{{ $name }}
 									</a>
 								@else
-									<router-link :to="{{ $sublink['_url'] }}" class="text-white text-justify no-underline dim">
+									<router-link :to="{
+										path: '{{ $sublink['_url'] }}'
+									}" class="text-white text-justify no-underline dim">
 										{{ $name }}
 									</router-link>
 									<!--

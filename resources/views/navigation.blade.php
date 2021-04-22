@@ -1,6 +1,6 @@
 @foreach (config('custom-links.links') as $name => $link)
 
-    @if(empty($link['_can']) || auth()->user()->can($link['_can']))
+    @if(empty($link['_hasAnyPermission']) || auth()->user()->hasAnyPermission($link['_hasAnyPermission']))
 
         @if (empty($link['_url']))
 
@@ -46,7 +46,7 @@
 
                     @foreach ($link['_links'] as $name => $sublink)
 
-                        @if(empty($sublink['_can']) || auth()->user()->can($sublink['_can']))
+                        @if(empty($sublink['_hasAnyPermission']) || auth()->user()->hasAnyPermission($sublink['_hasAnyPermission']))
 
                           <li class="leading-tight mb-4 ml-8 text-sm">
                         
@@ -85,27 +85,5 @@
         @endif
 
     @endif
-
-    {{-- @if (is_array($link))
-
-        @if (count($link))
-
-            <ul class="list-reset mb-8">
-                @foreach ($link as $name => $sublink)
-
-                    <li class="leading-tight mb-4 ml-8 text-sm">
-                        <a href="{{ $sublink }}" class="text-white text-justify no-underline dim">
-                            {{ $name }}
-                        </a>
-                    </li>
-
-                @endforeach
-            </ul>
-
-        @endif
-
-    @else
-
-    @endif  --}}
 
 @endforeach

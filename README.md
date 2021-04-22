@@ -48,6 +48,7 @@ return [
                 '{TEXT}' => [                   // Sub section text
                     '_can'    => '{PERMISSION}' // The name of the permission
                     '_url'    => '{URL}',       // URL
+                    '_type'   => '{TYPE}',      // Set to link, resource or tool
                     '_target' => '{TARGET}',    // Link target (optional)
                 ]
             ]
